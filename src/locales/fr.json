@@ -1,0 +1,204 @@
+{
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "submit": "Soumettre",
+    "update": "Mettre à jour",
+    "loading": "Chargement...",
+    "search": "Rechercher",
+    "selected_rows": "Ligne(s) sélectionnées",
+    "rows_per_page": "Lignes par page"
+  },
+  "navigation": {
+    "dashboard": "Tableau de bord",
+    "profile": "Profil",
+    "appearance": "Apparence",
+    "settings": "Paramètres"
+  },
+  "pages": {
+    "page_one": "Page Une"
+  },
+  "dashboard_cards": {
+    "stat_card_title": "Carte de Tableau de Bord",
+    "stat_card_subtitle": "Ajoutez vos statistiques ici",
+    "main_card_title": "Contenu Principal",
+    "main_card_subtitle": "Ajoutez votre contenu principal ici",
+    "side_card_title": "Contenu Secondaire",
+    "side_card_subtitle": "Ajoutez des informations supplémentaires ici"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "description": "Gérez les paramètres de votre compte. Mettez à jour votre profil, changez votre mot de passe et personnalisez l'apparence de l'application.",
+    "profile": {
+      "title": "Profile",
+      "description": "Gérez les paramètres de votre profil. Mettez à jour vos informations personnelles et vos préférences.",
+      "personal_info": "Informations personnelles",
+      "personal_info_description": "Mettez à jour vos informations de profil de base.",
+      "username": "Nom d'utilisateur",
+      "username_placeholder": "Entrez votre nom d'utilisateur",
+      "username_helper_text": "C'est votre nom d'affichage public. Cela peut être votre vrai nom ou un pseudonyme. Vous ne pouvez le changer qu'une fois tous les 30 jours.",
+      "email_placeholder": "Entrez votre adresse e-mail",
+      "email": "Email",
+      "email_helper_text": "Vous pouvez gérer les adresses e-mail vérifiées dans vos paramètres de messagerie.",
+      "bio_helper_text": "Écrivez une courte biographie sur vous-même. Cela peut inclure vos intérêts, votre profession ou toute autre information que vous souhaitez partager.",
+      "bio_placeholder": "Écrivez une courte biographie sur vous-même",
+      "update_profile": "Mettre à jour le profil",
+      "profile_updated": "Profil mis à jour avec succès",
+      "profile_update_failed": "Échec de la mise à jour du profil. Veuillez réessayer.",
+      "first_name": "Prénom",
+      "first_name_placeholder": "Entrez votre prénom",
+      "first_name_helper_text": "Votre prénom tel qu'il apparaît dans votre profil.",
+      "last_name": "Nom",
+      "last_name_placeholder": "Entrez votre nom",
+      "last_name_helper_text": "Votre nom tel qu'il apparaît dans votre profil.",
+      "password_section_title": "Mot de passe",
+      "password_section_description": "Mettez à jour votre mot de passe pour sécuriser votre compte.",
+      "password_prompt": "Cliquez sur le bouton ci-dessous pour changer votre mot de passe.",
+      "change_password": "Changer le mot de passe",
+      "current_password": "Mot de passe actuel",
+      "current_password_placeholder": "Entrez votre mot de passe actuel",
+      "new_password": "Nouveau mot de passe",
+      "new_password_placeholder": "Entrez votre nouveau mot de passe",
+      "new_password_helper_text": "Le mot de passe doit contenir au moins 8 caractères.",
+      "confirm_password": "Confirmer le nouveau mot de passe",
+      "confirm_password_placeholder": "Re-entrez votre nouveau mot de passe",
+      "update_password": "Mettre à jour le mot de passe",
+      "password_updated": "Mot de passe mis à jour avec succès",
+      "password_updated_description": "Votre mot de passe a été modifié.",
+      "password_update_failed": "Échec de la mise à jour du mot de passe",
+      "reverification_required": "Vérification supplémentaire requise",
+      "reverification_required_description": "Pour des raisons de sécurité, veuillez vous déconnecter et vous reconnecter avant de changer votre mot de passe.",
+      "current_password_incorrect": "Le mot de passe actuel est incorrect. Veuillez réessayer.",
+      "password_compromised": "Ce mot de passe a été compromis lors d'une violation de données. Veuillez choisir un mot de passe différent."
+    },
+    "appearance": {
+      "title": "Apparence",
+      "description": "Personnalisez l'apparence de l'application. Basculez automatiquement entre les thèmes jour et nuit.",
+      "theme": {
+        "label": "Thème",
+        "description": "Sélectionnez le thème du tableau de bord.",
+        "light": "Clair",
+        "dark": "Sombre"
+      },
+      "language": {
+        "label": "Langue",
+        "description": "Sélectionnez votre langue préférée.",
+        "en": "Anglais",
+        "fr": "Français",
+        "es": "Espagnol",
+        "de": "Allemand",
+        "pt": "Portugais",
+        "ru": "Russe",
+        "ja": "Japonais",
+        "ko": "Coréen",
+        "zh": "Chinois"
+      }
+    },
+    "account":{
+      "title": "Compte",
+      "description": "Gérez les paramètres de votre compte. Modifiez votre mot de passe et gérez vos adresses e-mail.",
+      "name": "Nom",
+      "name_placeholder": "Entrez votre nom",
+      "name_helper_text": "C'est le nom qui sera affiché sur votre profil.",
+      "birthday": "Date de naissance",
+      "birthday_placeholder": "Sélectionnez votre date de naissance",
+      "birthday_helper_text": "Votre date de naissance est utilisée pour personnaliser votre expérience. Elle ne sera pas affichée publiquement."
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de bord"
+  },
+  "home": {
+    "hero": {
+      "title": "Concentrez-vous sur ce qui compte",
+      "description": "Cette intégration de composants d'authentification personnalisés Vue & Clerk vous fera gagner des heures de développement.",
+      "cta": "Commencer à construire"
+    }
+  },
+  "auth": {
+    "sign_in_success": "Bon retour!",
+    "sign_in_success_description": "Vous vous êtes connecté avec succès.",
+    "sign_in_failed": "Échec de la connexion",
+    "sign_up_success": "Compte créé avec succès!",
+    "sign_up_success_description": "Bienvenue! Votre compte a été créé.",
+    "sign_up_failed": "Échec de l'inscription",
+    "sign_out_success": "Déconnexion réussie",
+    "sign_out_success_description": "Vous avez été déconnecté de votre compte.",
+    "sign_out_failed": "Échec de la déconnexion",
+    "verification_code_sent": "Code de vérification envoyé",
+    "verification_code_sent_description": "Veuillez vérifier votre e-mail pour le code de vérification.",
+    "verification_code_resent": "Code de vérification renvoyé",
+    "verification_code_resent_description": "Un nouveau code de vérification a été envoyé à votre e-mail.",
+    "verification_failed": "Échec de la vérification",
+    "verification_success": "E-mail vérifié avec succès",
+    "verification_success_description": "Votre e-mail a été vérifié."
+  },
+  "password_reset": {
+    "code_sent": "Code de réinitialisation envoyé",
+    "code_sent_description": "Le code de réinitialisation du mot de passe a été envoyé à votre e-mail.",
+    "code_resent": "Code de réinitialisation renvoyé",
+    "code_resent_description": "Un nouveau code de réinitialisation du mot de passe a été envoyé à votre e-mail.",
+    "reset_success": "Réinitialisation du mot de passe réussie",
+    "reset_success_description": "Votre mot de passe a été réinitialisé avec succès. Redirection...",
+    "reset_failed": "Échec de la réinitialisation du mot de passe"
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Consultez et gérez vos informations de profil.",
+    "first_name": "Prénom",
+    "last_name": "Nom",
+    "username": "Nom d'utilisateur",
+    "member_since": "Membre depuis",
+    "edit_profile": "Modifier le profil"
+  },
+  "billing": {
+    "title": "Facturation",
+    "description": "Gérez votre abonnement et vos informations de facturation.",
+    "current_plan": "Plan actuel",
+    "current_plan_description": "Vous êtes actuellement sur ce plan",
+    "available_plans": "Plans disponibles",
+    "month": "mois",
+    "features": "Fonctionnalités incluses",
+    "recommended": "Recommandé",
+    "upgrade": "Mettre à niveau",
+    "payment_method": "Méthode de paiement",
+    "payment_method_description": "Gérez vos méthodes de paiement",
+    "no_payment_method": "Aucune méthode de paiement enregistrée",
+    "add_payment_method": "Ajouter une méthode de paiement",
+    "add_payment_method_description": "Ajoutez une méthode de paiement pour mettre à niveau votre plan",
+    "billing_history": "Historique de facturation",
+    "billing_history_description": "Consultez vos factures et paiements antérieurs",
+    "no_invoices": "Aucune facture pour le moment",
+    "no_invoices_description": "Votre historique de facturation apparaîtra ici après votre premier paiement",
+    "plans": {
+      "free": {
+        "name": "Gratuit",
+        "description": "Parfait pour commencer",
+        "feature_1": "Fonctionnalité de base 1",
+        "feature_2": "Fonctionnalité de base 2",
+        "feature_3": "Fonctionnalité de base 3",
+        "feature_4": "Fonctionnalité de base 4"
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Pour les professionnels et les équipes",
+        "feature_1": "Toutes les fonctionnalités gratuites",
+        "feature_2": "Fonctionnalité avancée 1",
+        "feature_3": "Fonctionnalité avancée 2",
+        "feature_4": "Fonctionnalité avancée 3",
+        "feature_5": "Fonctionnalité avancée 4",
+        "feature_6": "Fonctionnalité avancée 5"
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "description": "Pour les grandes organisations",
+        "feature_1": "Toutes les fonctionnalités Pro",
+        "feature_2": "Fonctionnalité entreprise 1",
+        "feature_3": "Fonctionnalité entreprise 2",
+        "feature_4": "Fonctionnalité entreprise 3",
+        "feature_5": "Fonctionnalité entreprise 4",
+        "feature_6": "Fonctionnalité entreprise 5"
+      }
+    }
+  }
+}

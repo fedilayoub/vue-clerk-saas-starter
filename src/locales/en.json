@@ -1,0 +1,189 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "update": "Update",
+    "loading": "Loading..."
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "appearance": "Appearance",
+    "settings": "Settings"
+  },
+  "pages": {
+    "page_one": "Page One"
+  },
+  "dashboard_cards": {
+    "stat_card_title": "Dashboard Card",
+    "stat_card_subtitle": "Add your statistics here",
+    "main_card_title": "Main Content",
+    "main_card_subtitle": "Add your primary content here",
+    "side_card_title": "Secondary Content",
+    "side_card_subtitle": "Add additional information here"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account settings. Update your profile, change your password, and customize the app's appearance.",
+    "appearance": {
+      "title": "Appearance",
+      "description": "Customize the appearance of the app. Automatically switch between day and night themes.",
+      "theme": {
+        "label": "Theme",
+        "description": "Select the theme for the dashboard.",
+        "light": "Light",
+        "dark": "Dark"
+      },
+      "language": {
+        "label": "Language",
+        "description": "Select your preferred language.",
+        "en": "English",
+        "fr": "French",
+        "es": "Spanish",
+        "de": "German",
+        "pt": "Portuguese",
+        "ru": "Russian",
+        "ja": "Japanese",
+        "ko": "Korean",
+        "zh": "Chinese"
+      }
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Manage your profile settings. Update your personal information and preferences.",
+      "personal_info": "Personal Information",
+      "personal_info_description": "Update your basic profile information.",
+      "first_name": "First Name",
+      "first_name_placeholder": "Enter your first name",
+      "first_name_helper_text": "Your first name as it appears in your profile.",
+      "last_name": "Last Name",
+      "last_name_placeholder": "Enter your last name",
+      "last_name_helper_text": "Your last name as it appears in your profile.",
+      "username": "Username",
+      "username_placeholder": "Enter your username",
+      "username_helper_text": "This is your public display name. It can be your real name or a pseudonym. You can only change this once every 30 days.",
+      "email": "Email",
+      "email_placeholder": "Enter your email address",
+      "email_helper_text": "Your email is managed by your authentication provider and cannot be changed here.",
+      "update_profile": "Update Profile",
+      "profile_updated": "Profile updated successfully",
+      "profile_update_failed": "Failed to update profile. Please try again.",
+      "password_section_title": "Password",
+      "password_section_description": "Update your password to keep your account secure.",
+      "password_prompt": "Click the button below to change your password.",
+      "change_password": "Change Password",
+      "current_password": "Current Password",
+      "current_password_placeholder": "Enter your current password",
+      "new_password": "New Password",
+      "new_password_placeholder": "Enter your new password",
+      "new_password_helper_text": "Password must be at least 8 characters long.",
+      "confirm_password": "Confirm New Password",
+      "confirm_password_placeholder": "Re-enter your new password",
+      "update_password": "Update Password",
+      "password_updated": "Password updated successfully",
+      "password_updated_description": "Your password has been changed.",
+      "password_update_failed": "Failed to update password",
+      "reverification_required": "Additional verification required",
+      "reverification_required_description": "For security reasons, please sign out and sign back in before changing your password.",
+      "current_password_incorrect": "Current password is incorrect. Please try again.",
+      "password_compromised": "This password has been compromised in a data breach. Please choose a different password."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "home": {
+    "hero": {
+      "title": "Focus On What Matters",
+      "description": "This Vue & Clerk custom auth component integration will save you hours of development time.",
+      "cta": "Start Building"
+    }
+  },
+  "auth": {
+    "sign_in_success": "Welcome back!",
+    "sign_in_success_description": "You have successfully signed in.",
+    "sign_in_failed": "Sign in failed",
+    "sign_up_success": "Account created successfully!",
+    "sign_up_success_description": "Welcome! Your account has been created.",
+    "sign_up_failed": "Sign up failed",
+    "sign_out_success": "Signed out successfully",
+    "sign_out_success_description": "You have been signed out of your account.",
+    "sign_out_failed": "Sign out failed",
+    "verification_code_sent": "Verification code sent",
+    "verification_code_sent_description": "Please check your email for the verification code.",
+    "verification_code_resent": "Verification code resent",
+    "verification_code_resent_description": "A new verification code has been sent to your email.",
+    "verification_failed": "Verification failed",
+    "verification_success": "Email verified successfully",
+    "verification_success_description": "Your email has been verified."
+  },
+  "password_reset": {
+    "code_sent": "Reset code sent",
+    "code_sent_description": "Password reset code has been sent to your email.",
+    "code_resent": "Reset code resent",
+    "code_resent_description": "A new password reset code has been sent to your email.",
+    "reset_success": "Password reset successful",
+    "reset_success_description": "Your password has been reset successfully. Redirecting...",
+    "reset_failed": "Password reset failed"
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "View and manage your profile information.",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "username": "Username",
+    "member_since": "Member Since",
+    "edit_profile": "Edit Profile"
+  },
+  "billing": {
+    "title": "Billing",
+    "description": "Manage your subscription and billing information.",
+    "current_plan": "Current Plan",
+    "current_plan_description": "You are currently on this plan",
+    "available_plans": "Available Plans",
+    "month": "month",
+    "features": "Features included",
+    "recommended": "Recommended",
+    "upgrade": "Upgrade",
+    "payment_method": "Payment Method",
+    "payment_method_description": "Manage your payment methods",
+    "no_payment_method": "No payment method on file",
+    "add_payment_method": "Add Payment Method",
+    "add_payment_method_description": "Add a payment method to upgrade your plan",
+    "billing_history": "Billing History",
+    "billing_history_description": "View your past invoices and payments",
+    "no_invoices": "No invoices yet",
+    "no_invoices_description": "Your billing history will appear here once you make a payment",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "Perfect for getting started",
+        "feature_1": "Basic feature 1",
+        "feature_2": "Basic feature 2",
+        "feature_3": "Basic feature 3",
+        "feature_4": "Basic feature 4"
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "For professionals and teams",
+        "feature_1": "All Free features",
+        "feature_2": "Advanced feature 1",
+        "feature_3": "Advanced feature 2",
+        "feature_4": "Advanced feature 3",
+        "feature_5": "Advanced feature 4",
+        "feature_6": "Advanced feature 5"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large organizations",
+        "feature_1": "All Pro features",
+        "feature_2": "Enterprise feature 1",
+        "feature_3": "Enterprise feature 2",
+        "feature_4": "Enterprise feature 3",
+        "feature_5": "Enterprise feature 4",
+        "feature_6": "Enterprise feature 5"
+      }
+    }
+  }
+}
