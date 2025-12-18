@@ -152,6 +152,30 @@ const handleSignIn = async () => {
         title: t('auth.verification_code_sent'),
         description: t('auth.verification_code_sent_description'),
       })
+    } else if (result.status === 'needs_second_factor') {
+      // Handle Client Trust - automatic second factor verification on new devices
+      const hasEmailCode = result.supportedSecondFactors?.some(
+        factor => factor.strategy === 'email_code'
+      )
+      
+      if (hasEmailCode) {
+        // Prepare second factor (sends verification code to email)
+        await signIn.value.prepareSecondFactor({
+          strategy: 'email_code'
+        })
+        showVerification.value = true
+        toast({
+          title: t('auth.verification_code_sent'),
+          description: 'For security, please verify your identity on this new device.',
+        })
+      } else {
+        error.value = 'Second factor verification required but email code is not available.'
+        toast({
+          title: t('auth.sign_in_failed'),
+          description: error.value,
+          variant: 'destructive',
+        })
+      }
     } else {
       error.value = `Unexpected status: ${result.status}`
       toast({
@@ -181,10 +205,23 @@ const handleVerification = async () => {
   error.value = null
 
   try {
-    const result = await signIn.value.attemptFirstFactor({
-      strategy: 'email_code',
-      code: verificationCode.value
-    })
+    // Determine if we need first factor or second factor verification
+    const signInAttempt = signIn.value
+    let result
+
+    if (signInAttempt.status === 'needs_second_factor') {
+      // Handle second factor (Client Trust)
+      result = await signIn.value.attemptSecondFactor({
+        strategy: 'email_code',
+        code: verificationCode.value
+      })
+    } else {
+      // Handle first factor
+      result = await signIn.value.attemptFirstFactor({
+        strategy: 'email_code',
+        code: verificationCode.value
+      })
+    }
 
     if (result.status === 'complete') {
       toast({
@@ -225,10 +262,21 @@ const resendVerification = async () => {
   error.value = null
 
   try {
-    await signIn.value.prepareFirstFactor({
-      strategy: 'email_code',
-      email: email.value
-    })
+    const signInAttempt = signIn.value
+
+    if (signInAttempt.status === 'needs_second_factor') {
+      // Resend second factor code
+      await signIn.value.prepareSecondFactor({
+        strategy: 'email_code'
+      })
+    } else {
+      // Resend first factor code
+      await signIn.value.prepareFirstFactor({
+        strategy: 'email_code',
+        email: email.value
+      })
+    }
+
     toast({
       title: t('auth.verification_code_resent'),
       description: t('auth.verification_code_resent_description'),
