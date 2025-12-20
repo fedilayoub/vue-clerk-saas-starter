@@ -2,6 +2,8 @@
 
 A modern starter template built with Vue 3, Clerk, and shadcn-vue components. This template provides everything you need to quickly bootstrap a web application with secure authentication, beautiful UI components, and best practices built-in.
 
+<img width="1920" height="1080" alt="vue"  src="https://github.com/user-attachments/assets/2977fe49-aa02-4817-9a18-0a4c42204aa0" />
+
 ## Overview
 
 This starter template solves common authentication challenges and provides a solid foundation for building web applications. It includes:
@@ -115,6 +117,15 @@ src/
 - `/app/settings/profile` - User profile settings
 - `/app/settings/appearance` - Theme and appearance settings
 - `/app/billing` - Billing page
+
+## Clerk Configuration
+
+This template comes pre-configured with **Clerk** for authentication. Below are the key configuration settings in clerk dashboard:
+
+<img width="1100" height="1085" alt="email" src="https://github.com/user-attachments/assets/798be565-13ba-4bf2-a11a-b492ab19e55f" />
+<img width="1100" height="590" alt="password" src="https://github.com/user-attachments/assets/fb7425b3-d3c2-40b5-87f9-1051d67e3a86" />
+<img width="1100" height="712" alt="user_model" src="https://github.com/user-attachments/assets/2fbfe41a-38df-48a3-bfa2-679a4820baaf" />
+
 
 ## Contributing
 
