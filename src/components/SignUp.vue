@@ -41,7 +41,7 @@
         </div>
         <div class="mb-2">
           <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_up.email_label') }}</label>
-          <Input id="email" v-model="email" :placeholder="t('auth.sign_up.email_placeholder')" required type="email" :disabled="loading"
+          <Input id="email" v-model="email" placeholder="m@example.com" required type="email" :disabled="loading"
             class="mt-1 block w-full rounded-md text-gray-700 dark:text-white border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
         </div>
         <div class="mb-5">

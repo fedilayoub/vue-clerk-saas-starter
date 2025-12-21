@@ -33,14 +33,14 @@
             <form v-if="!showVerification" class="mt-6" @submit.prevent="handleSignIn">
                 <div class="mb-2">
                     <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_in.email_label') }}</label>
-                    <Input id="email" v-model="email" :placeholder="t('auth.sign_up.email_placeholder')" required type="email"
+                    <Input id="email" v-model="email" placeholder="m@example.com" required type="email"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md text-gray-700 dark:text-white border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
                 <div class="mb-5">
                     <label for="password"
                         class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_in.password_label') }}</label>
-                    <Input id="password" v-model="password" :placeholder="t('auth.sign_up.password_placeholder')" required type="password"
+                    <Input id="password" v-model="password" :placeholder="t('auth.sign_in.password_placeholder')" required type="password"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md text-gray-700 dark:text-white border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
@@ -57,7 +57,7 @@
             <form v-else class="space-y-4 mt-6" @submit.prevent="handleVerification">
                 <div>
                     <label for="code" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_in.verification_code_label') }}</label>
-                    <Input id="code" v-model="verificationCode" :placeholder="t('auth.sign_up.verification_code_placeholder')" required :disabled="loading"
+                    <Input id="code" v-model="verificationCode" :placeholder="t('auth.sign_in.verification_code_placeholder')" required :disabled="loading"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
 

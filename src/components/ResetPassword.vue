@@ -37,7 +37,7 @@
             <form v-if="!showResetForm" class="space-y-4 mt-6" @submit.prevent="handleRequestReset">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.reset_password.email_label') }}</label>
-                    <Input id="email" v-model="email" :placeholder="t('auth.reset_password.email_placeholder')" required type="email"
+                    <Input id="email" v-model="email" placeholder="m@example.com" required type="email"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
