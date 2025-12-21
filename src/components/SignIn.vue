@@ -22,25 +22,25 @@
 
             <div class="mx-auto max-w-2xl md:text-center text-gray-700 dark:text-white">
                 <h2 class="text-3xl tracking-tighter ">
-                    {{ showVerification ? 'Verify Identity' : 'Welcome back' }}
+                    {{ showVerification ? t('auth.sign_in.verify_title') : t('auth.sign_in.title') }}
                 </h2>
                 <p class="mt-4 text-lg tracking-tight text-gray-700 dark:text-gray-300">
-                    {{ showVerification ? 'Please enter the verification code sent to your email.' : 'Sign in to your account to continue' }}
+                    {{ showVerification ? t('auth.sign_in.verify_description') : t('auth.sign_in.description') }}
                 </p>
             </div>
 
             <!-- Sign In Form -->
             <form v-if="!showVerification" class="mt-6" @submit.prevent="handleSignIn">
                 <div class="mb-2">
-                    <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">Email</label>
-                    <Input id="email" v-model="email" placeholder="m@example.com" required type="email"
+                    <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_in.email_label') }}</label>
+                    <Input id="email" v-model="email" :placeholder="t('auth.sign_up.email_placeholder')" required type="email"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md text-gray-700 dark:text-white border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
                 <div class="mb-5">
                     <label for="password"
-                        class="block text-sm font-medium text-gray-900 dark:text-gray-100">Password</label>
-                    <Input id="password" v-model="password" placeholder="••••••••" required type="password"
+                        class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_in.password_label') }}</label>
+                    <Input id="password" v-model="password" :placeholder="t('auth.sign_up.password_placeholder')" required type="password"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md text-gray-700 dark:text-white border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
@@ -49,16 +49,15 @@
                     class="flex items-center justify-center py-3 px-4 mt-5 text-white font-medium transform-gpu bg-[#42b883] hover:bg-[#42b883]/90 rounded-full md:inline-flex cursor-pointer w-full disabled:opacity-50 transition-all duration-300">
                     <span v-if="loading"
                         class="h-5 w-5 mr-2 animate-spin rounded-full border-2 border-white"></span>
-                    <span class="relative">{{ loading ? 'Signing in...' : 'Sign In' }}</span>
+                    <span class="relative">{{ loading ? t('auth.sign_in.signing_in') : t('auth.sign_in.sign_in_button') }}</span>
                 </button>
             </form>
 
             <!-- Verification Form -->
             <form v-else class="space-y-4 mt-6" @submit.prevent="handleVerification">
                 <div>
-                    <label for="code" class="block text-sm font-medium text-gray-900 dark:text-gray-100">Verification
-                        Code</label>
-                    <Input id="code" v-model="verificationCode" placeholder="Enter code" required :disabled="loading"
+                    <label for="code" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.sign_in.verification_code_label') }}</label>
+                    <Input id="code" v-model="verificationCode" :placeholder="t('auth.sign_up.verification_code_placeholder')" required :disabled="loading"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
 
@@ -66,30 +65,30 @@
                     class="flex items-center justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu bg-[#42b883] hover:bg-[#42b883]/90 rounded-full md:inline-flex cursor-pointer w-full disabled:opacity-50 transition-all duration-300">
                     <span v-if="loading"
                         class="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
-                    <span class="relative">{{ loading ? 'Verifying...' : 'Verify' }}</span>
+                    <span class="relative">{{ loading ? t('auth.sign_in.verifying') : t('auth.sign_in.verify_button') }}</span>
                 </button>
 
                 <button type="button" :disabled="loading" @click="resendVerification"
                     class="w-full text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    Didn't receive the code? Click to resend
+                    {{ t('auth.sign_in.resend_code') }}
                 </button>
             </form>
 
             <div class="mt-6 text-center text-sm">
                 <p class="text-gray-500 dark:text-gray-400">
-                    Don't have an account?
+                    {{ t('auth.sign_in.no_account') }}
                     <router-link
                         class="font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2"
                         to="/sign-up">
-                        Sign up
+                        {{ t('auth.sign_in.sign_up_link') }}
                     </router-link>
                 </p>
                 <p class="mt-4 text-gray-500 dark:text-gray-400">
-                    Forgot your password?
+                    {{ t('auth.sign_in.forgot_password') }}
                     <router-link
                         class="font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2"
                         to="/reset-password">
-                        Reset password
+                        {{ t('auth.sign_in.reset_password_link') }}
                     </router-link>
                 </p>
                 <div>
@@ -166,10 +165,10 @@ const handleSignIn = async () => {
         showVerification.value = true
         toast({
           title: t('auth.verification_code_sent'),
-          description: 'For security, please verify your identity on this new device.',
+          description: t('auth.sign_in.verify_new_device'),
         })
       } else {
-        error.value = 'Second factor verification required but email code is not available.'
+        error.value = t('auth.sign_in.second_factor_required')
         toast({
           title: t('auth.sign_in_failed'),
           description: error.value,
@@ -177,7 +176,7 @@ const handleSignIn = async () => {
         })
       }
     } else {
-      error.value = `Unexpected status: ${result.status}`
+      error.value = `${t('auth.sign_in.unexpected_status')}: ${result.status}`
       toast({
         title: t('auth.sign_in_failed'),
         description: error.value,
@@ -234,7 +233,7 @@ const handleVerification = async () => {
       })
       clerk.value.redirectToAfterSignIn()
     } else {
-      error.value = `Unexpected status: ${result.status}`
+      error.value = `${t('auth.sign_in.unexpected_status')}: ${result.status}`
       toast({
         title: t('auth.verification_failed'),
         description: error.value,

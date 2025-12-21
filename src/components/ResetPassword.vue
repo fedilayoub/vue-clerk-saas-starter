@@ -23,12 +23,12 @@
 
             <div class="mx-auto max-w-2xl md:text-center text-gray-700 dark:text-white">
                 <h2 class="text-3xl tracking-tighter ">
-                    {{ showResetForm ? 'Reset Password' : 'Forgot Password' }}
+                    {{ showResetForm ? t('auth.reset_password.reset_title') : t('auth.reset_password.title') }}
                 </h2>
                 <p class="mt-4 text-lg tracking-tight text-gray-700 dark:text-gray-300">
                     {{ showResetForm
-                        ? 'Enter the code sent to your email and your new password'
-                        : 'Enter your email address and we will send you a reset link'
+                        ? t('auth.reset_password.reset_description')
+                        : t('auth.reset_password.description')
                     }}
                 </p>
             </div>
@@ -36,8 +36,8 @@
             <!-- Request Reset Form -->
             <form v-if="!showResetForm" class="space-y-4 mt-6" @submit.prevent="handleRequestReset">
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">Email</label>
-                    <Input id="email" v-model="email" placeholder="m@example.com" required type="email"
+                    <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.reset_password.email_label') }}</label>
+                    <Input id="email" v-model="email" :placeholder="t('auth.reset_password.email_placeholder')" required type="email"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
@@ -46,23 +46,21 @@
                     class="flex items-center justify-center gap-x-1 py-3 px-4 text-black font-medium transform-gpu bg-accent rounded-full md:inline-flex cursor-pointer w-full disabled:opacity-50">
                     <span v-if="loading"
                         class="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent"></span>
-                    <span class="relative">{{ loading ? 'Sending...' : 'Send Reset Code' }}</span>
+                    <span class="relative">{{ loading ? t('auth.reset_password.sending') : t('auth.reset_password.send_code_button') }}</span>
                 </button>
             </form>
 
             <!-- Reset Password Form -->
             <form v-else class="mt-6" @submit.prevent="handleResetPassword">
                 <div class="mb-2">
-                    <label for="code" class="block text-sm font-medium text-gray-900 dark:text-gray-100">Verification
-                        Code</label>
-                    <Input id="code" v-model="code" placeholder="Enter code from email" required :disabled="loading"
+                    <label for="code" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.reset_password.code_label') }}</label>
+                    <Input id="code" v-model="code" :placeholder="t('auth.reset_password.code_placeholder')" required :disabled="loading"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
 
                 <div class="mb-5">
-                    <label for="newPassword" class="block text-sm font-medium text-gray-900 dark:text-gray-100">New
-                        Password</label>
-                    <Input id="newPassword" v-model="newPassword" placeholder="••••••••" required type="password"
+                    <label for="newPassword" class="block text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('auth.reset_password.new_password_label') }}</label>
+                    <Input id="newPassword" v-model="newPassword" :placeholder="t('auth.reset_password.new_password_placeholder')" required type="password"
                         :disabled="loading"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-neutral-800 focus:ring-neutral-800" />
                 </div>
@@ -71,22 +69,22 @@
                     class="flex items-center justify-center gap-x-1 py-3 px-4 text-black font-medium transform-gpu bg-accent rounded-full md:inline-flex cursor-pointer w-full disabled:opacity-50">
                     <span v-if="loading"
                         class="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent"></span>
-                    <span class="relative">{{ loading ? 'Resetting...' : 'Reset Password' }}</span>
+                    <span class="relative">{{ loading ? t('auth.reset_password.resetting') : t('auth.reset_password.reset_button') }}</span>
                 </button>
 
                 <button type="button" :disabled="loading" @click="resendCode"
                     class="w-full text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    Didn't receive the code? Click to resend
+                    {{ t('auth.reset_password.resend_code') }}
                 </button>
             </form>
 
             <div class="mt-6 text-center text-sm">
                 <p class="text-gray-500 dark:text-gray-400">
-                    Remember your password?
+                    {{ t('auth.reset_password.remember_password') }}
                     <router-link
                         class="font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2"
                         to="/sign-in">
-                        Sign in
+                        {{ t('auth.reset_password.sign_in_link') }}
                     </router-link>
                 </p>
             </div>
@@ -170,7 +168,7 @@ const handleResetPassword = async () => {
         clerk.value.redirectToAfterSignIn()
       }, 2000)
     } else {
-      error.value = `Unexpected status: ${result.status}`
+      error.value = `${t('auth.sign_in.unexpected_status')}: ${result.status}`
       toast({
         title: t('password_reset.reset_failed'),
         description: error.value,
